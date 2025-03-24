@@ -27,7 +27,7 @@ Bu proje, mevcut bir metro ağı üzerinde başlangıç ve hedef istasyonlar ara
 
 - **Genişlik Öncelikli Arama (BFS)** temel bir grafik dolaşma algoritmasıdır. Temel amacı iki belirli düğüm arasındaki en kısa mesafeyi bulmaktır. İlk giren ilk çıkar mantığıyla kuyruk veri yapısı kullanır. Bir düğümle başlar, ardından ilk olarak bu düğümün tüm komşu düğümlerini dolaşır. Tüm komşu düğümler ziyaret edildikten sonra, bu komşuların komşuları dolaşılır.
 
-Adımlar:
+Yaklaşım olarak aşağıdaki adımları izleyerek iki düğüm arasındaki en kısa mesafeyi bulur:
 1. **Başlangıç:** Kaynak yani başlangıç olarak belirlenen düğümü kuyruğa ekle ve ziyaret edilmiş olarak işaretle.
 2. **Keşif:** Kuyruk boş değilken:
    - Düğümü kuyruktan çıkar.
@@ -41,26 +41,27 @@ Adımlar:
 
 Kullandığı maliyet fonksiyonları:
 1. **g(n):** Başlangıçtan n düğümüne olan gerçek maliyet
-2. **h(n):** n düğümünden hedefe olan tahmini maliyet
+2. **h(n):** Sezgisel algoritma tahmini ile n düğümünden hedefe olan tahmini maliyet
 
-Toplam maliyet: `f(n) = g(n) + h(n)`
+Toplam tahmini maliyet: `f(n) = g(n) + h(n)` 
 
-Adımlar:
-1. Başlangıç düğümü f(n) değeriyle öncelik kuyruğuna eklenir.
-2. En düşük f(n) değerine sahip düğüm kuyruğundan çıkarılır.
-3. Eğer bu düğüm hedefse, algoritma sonlanır.
-4. Değilse, komşulara gidilerek g, h ve f hesaplanır ve kuyruğa eklenir.
-5. Kuyruk boşalana veya hedefe ulaşılana kadar devam eder.
+A* algoritması bir öncelik kuyruğunu sürdürerek ağ üzerindeki bütün yolları f(n) değerlerine göre önceliklendirerek ile aşağıdaki adımları izler:
+1.  ****Başlangıç:**** Başlangıç düğümünü öncelik kuyruğuna f(n) değeri ile ekler.
+2.  ****Döngü:**** Öncelik kuyruğu boş olmadıkça, en düşük f(n) değerine sahip düğüm kuyruktan çıkartılır.
+3.  ****Hedefe Varıldı Mı?:**** Eğer mevcut düğüm hedef düğümü ise algoritma sonlanır ve keşfedilen yol döndürülür.
+4.  ****Keşif:**** Hedefe varılmadıysa düğümün komşularına bakılır, g, h ve f değerleri hesaplanır ve komşu düğümler eğer öncelik kuyruğunda değilse ya da komşu düğüme doğru daha optimal bir yol varsa öncelik kuyruğuna eklenir.
+	5.  ****Sonlanma:**** Döngü hedef düğüme ulaşılana veya öncelik kuyruğunda düğüm kalmayana kadar devam eder ki bu da mevcut bir yol olmadığını gösterir.
 
 ### Neden Bu Algoritmalar?
 
-- **BFS** algoritması zaman maliyetini göz ardı ederek en az aktarmalı (en az adımlı) yolu bulur.
-- **A*** algoritması ise maliyet ve yönlendirme ile çalışır, bu sayede en kısa sürede ulaşımı sağlar. Sezgisel olması sayesinde geniş veri kümelerinde de verimli çalışır.
+- **BFS** algoritması zaman maliyetini göz ardı ederek hedefe ulaşacak en az adımlı yolu bulmaya çalışır ve bir düğümden diğerine ulaşmak için en kısa yolu seçer
+- **A*** algoritması ise maliyet ve yönlendirme ile çalışır, tanımlanmış sezgisel algoritmayla en kısa süren yolun bulunmasını garanti eder ve sezgisel algoritma kullanmayan diğer algoritmalara göre daha verimlidir. Ayrıca sezgisel algoritmanın doğru düzenlenmesi durumunda geniş çaptaki durumlara adapte olabilmektedir.
 
 ---
 
 ## 🧪 Örnek Kullanım ve Test Sonuçları
 - Aşağıdaki metro ağı, **en kısa sürede ulaşım** ve **en az aktarmalı güzergah** gibi algoritmaların test edilmesi için oluşturulmuş örnek bir modeldir.
+
 ### 🗺️ Hatlar ve İstasyonlar
 
 #### 🚨 Kırmızı Hat
