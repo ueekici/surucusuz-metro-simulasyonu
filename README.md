@@ -43,8 +43,8 @@ Yaklaşım olarak aşağıdaki adımları izleyerek iki düğüm arasındaki en 
 - **A\* Algoritması** başlangıç ve bitiş noktaları arasında en kısa mesafeyi bulmak için kullanılan gelişmiş bir arama algoritmasıdır. A* sezgisel algoritmalar kullanarak düğümden hedefe doğru maliyeti tahmin eder ve arama sürecini optimize eder.
 
 - A* algoritmasının temelinde maliyet fonksiyonları ve sezgisel algoritmalar vardır. Bunun için iki ana parametre kullanır:
-	1. **g(n):** Başlangıçtan n düğümüne olan gerçek maliyet
-	2. **h(n):** Sezgisel algoritma tahmini ile n düğümünden hedefe olan tahmini maliyet
+	- **g(n):** Başlangıçtan n düğümüne olan gerçek maliyet
+	- **h(n):** Sezgisel algoritma tahmini ile n düğümünden hedefe olan tahmini maliyet
 
 Toplamı, yani f(n)=g(n)+h(n), düğümler üzerindeki yolun toplam tahmin maliyetini temsil eder.
 
