@@ -40,11 +40,11 @@ Yaklaşım olarak aşağıdaki adımları izleyerek iki düğüm arasındaki en 
 
 ### A* Algoritması
 
-- **A* Algoritması** başlangıç ve bitiş noktaları arasında en kısa mesafeyi bulmak için kullanılan gelişmiş bir arama algoritmasıdır. A* sezgisel algoritmalar kullanarak düğümden hedefe doğru maliyeti tahmin eder ve arama sürecini optimize eder.
+- **A\* Algoritması** başlangıç ve bitiş noktaları arasında en kısa mesafeyi bulmak için kullanılan gelişmiş bir arama algoritmasıdır. A* sezgisel algoritmalar kullanarak düğümden hedefe doğru maliyeti tahmin eder ve arama sürecini optimize eder.
 
 - A* algoritmasının temelinde maliyet fonksiyonları ve sezgisel algoritmalar vardır. Bunun için iki ana parametre kullanır:
-1. **g(n):** Başlangıçtan n düğümüne olan gerçek maliyet
-2. **h(n):** Sezgisel algoritma tahmini ile n düğümünden hedefe olan tahmini maliyet
+	1. **g(n):** Başlangıçtan n düğümüne olan gerçek maliyet
+	2. **h(n):** Sezgisel algoritma tahmini ile n düğümünden hedefe olan tahmini maliyet
 
 Toplamı, yani f(n)=g(n)+h(n), düğümler üzerindeki yolun toplam tahmin maliyetini temsil eder.
 
@@ -57,8 +57,8 @@ A* algoritması bir öncelik kuyruğunu sürdürerek ağ üzerindeki bütün yol
 
 ### Neden Bu Algoritmalar?
 
-- **BFS** algoritması zaman maliyetini göz ardı ederek hedefe ulaşacak en az adımlı yolu bulmaya çalışır ve bir düğümden diğerine ulaşmak için en kısa yolu seçer
-- **A*** algoritması ise maliyet ve yönlendirme ile çalışır, tanımlanmış sezgisel algoritmayla en kısa süren yolun bulunmasını garanti eder ve sezgisel algoritma kullanmayan diğer algoritmalara göre daha verimlidir. Ayrıca sezgisel algoritmanın doğru düzenlenmesi durumunda geniş çaptaki durumlara adapte olabilmektedir.
+- **BFS algoritması** zaman maliyetini göz ardı ederek hedefe ulaşacak en az adımlı yolu bulmaya çalışır ve bir düğümden diğerine ulaşmak için en kısa yolu seçer
+- **A\* algoritması** ise maliyet ve yönlendirme ile çalışır, tanımlanmış sezgisel algoritmayla en kısa süren yolun bulunmasını garanti eder ve sezgisel algoritma kullanmayan diğer algoritmalara göre daha verimlidir. Ayrıca sezgisel algoritmanın doğru düzenlenmesi durumunda geniş çaptaki durumlara adapte olabilmektedir.
 
 ---
 
